@@ -19,5 +19,6 @@ By modeling observational data captured from the legislature itself, we can begi
 
 ```
 $ chmod +x make
+$ ./make
 $ ./main
 ```
