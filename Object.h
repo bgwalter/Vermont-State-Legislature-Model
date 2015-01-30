@@ -13,9 +13,12 @@
 
 	USAGE:
 	
-	Object obj;				// create a new Object called obj
-	obj.setOpns(0.2, 0.3);	// set opinion and uncertainty of obj
-	obj.printOpns();		// prints out each value of the object
+	// create a new Object called obj
+	Object obj;				
+	// set opinion and uncertainty of obj
+	obj.setOpns(0.2, 0.3);	
+	// prints out each value of the object
+	obj.printOpns();		
 
 	// define float values to hold each of the Object's values
 	float opinion, uncertainty, opinionSeg[2];
@@ -47,7 +50,8 @@ class Object {
 			Returns: None
 			Returns each of the object's values as output parameters
 		*/
-		void getOpns(float* opinion, float* uncertainty, float opinionSegment[]); 
+		void getOpns(float* opinion, float* uncertainty, 
+					 float opinionSegment[]); 
 
 		/*
 			Parameters: None

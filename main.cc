@@ -2,25 +2,23 @@
 
 #include "Object.h"
 #include "Agent.h"
-#include "Bill.h"
+
+#define MEMBERS 5
 
 using namespace std;
 
 int main(void) {
+	Bill bill;
+	Agent mmbrs[MEMBERS];
+	mmbrs[0].setMmbr(0.2, 0.3, 'R');
+	mmbrs[1].setMmbr(0.3, 0.25, 'R');
+	mmbrs[2].setMmbr(-0.5, 0.3, 'D');
+	mmbrs[3].setMmbr(-0.1, 0.1, 'D');
+	mmbrs[4].setMmbr(0, 0.5, 'D');
 
-	Object obj;				// create a new Object called obj
-	obj.setOpns(0.2, 0.3);	// set opinion and uncertainty of obj
-	obj.printOpns();		// prints out each value of the object
-	// define float values to hold each of the Object's values
-
-	Agent mmbr;						// declare a new Agent called mmbr
-	mmbr.setMmbr(-0.2, 0.3, 'D');	// set opinion, uncertainty, and part of mmbr
-	mmbr.printMmbr();				// prints values of mmbr
-
-	// set float and char values for each of mmbr's attributes
-	float opinion, uncertainty, opinionSegment[2];
-	char pparty;	
-	// give the addresses of each value to getMmbr for use as output parameters
-	mmbr.getMmbr(&opinion, &uncertainty, opinionSegment, &pparty);
-
+	bill.setBill(0.2);
+	
+	int i;
+	for (i=0;i<MEMBERS;i++) 
+		cout << mmbrs[i].formOpn(bill) <<endl;
 }

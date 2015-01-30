@@ -56,3 +56,40 @@ void Agent::printMmbr(void) {
 	printOpns();		// function called from Object class
 	cout << "Party: " << party << endl;	
 }
+
+/*
+	Parameters: Bill object to form opinion on
+	Return: float indicating how the agent feels about the bill
+	Form an opinion on a given bill
+*/
+float Agent::formOpn(Bill bill) {
+	/*
+		The functions to determine how an agent feels about a bill are simple
+		linear functions (one with a positive slope, the other with a negative 
+		slope). An output of 1 indicates that the position of the bill is the
+		same as the agent's opinion.
+		
+		Any value greater than 0 indicates the the agent is favorable of the 
+		bill. 
+		
+		A value of 0 indicates that the position of the bill is at the edge of
+		the agent's opinion segment
+		
+		A negative value indicates that the bill is outside of the agent's 
+		opinion segment, and thus feels negatively about the bill.
+	*/
+
+
+	// get position of bill
+	float billOpn;
+	bill.getBill(&billOpn);
+
+	// if the bill is to the left of the agent's opinion
+	if (billOpn < opn) 
+		return (1 + (billOpn - opn) / uncrtn);
+	// if the bill is to the right of hte agent's opinion
+	if (billOpn > opn)
+		return (1 + (opn - billOpn) / uncrtn);
+	// if the bill is to the 
+	else return 1;
+}

@@ -5,13 +5,17 @@
 
 	Header file for Agent class
 
-	Agents are each member of the committee and are derived from the Object class. 
+	Agents are each member of the committee and are derived from the Object 
+	class. 
 
 	USAGE:
 
-	Agent mmbr;						// declare a new Agent called mmbr
-	mmbr.setMmbr(-0.2, 0.3, 'D');	// set opinion, uncertainty, and part of mmbr
-	mmbr.printMmbr();				// prints values of mmbr
+	// declare a new Agent called mmbr
+	Agent mmbr;				
+	// set opinion, uncertainty, and part of mmbr		
+	mmbr.setMmbr(-0.2, 0.3, 'D');	
+	// prints values of mmbr
+	mmbr.printMmbr();				
 
 	// set float and char values for each of mmbr's attributes
 	float opinion, uncertainty, opinionSegment[2];
@@ -19,6 +23,8 @@
 	// give the addresses of each value to getMmbr for use as output parameters
 	mmbr.getMmbr(&opinion, &uncertainty, opinionSegment, &pparty);
 */
+
+#include "Bill.h"
 
 class Agent: public Object {
 
@@ -50,4 +56,11 @@ class Agent: public Object {
 			Prints out each attribute of the agent
 		*/
 		void printMmbr(void); 
+		
+		/*
+			Parameters: Bill object to form opinion on
+			Return: float indicating how the agent feels about the bill
+			Form an opinion on a given bill
+		*/
+		float formOpn(Bill bill);
 };

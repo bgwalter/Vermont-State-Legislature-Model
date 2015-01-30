@@ -43,7 +43,8 @@ int Object::setOpns(float opinion, float uncertainty) {
 	Returns: None
 	Returns each of the object's values as output parameters
 */
-void Object::getOpns(float* opinion, float* uncertainty, float opinionSegment[]) {
+void Object::getOpns(float* opinion, float* uncertainty, 
+					 float opinionSegment[]) {
 	*opinion = opn;
 	*uncertainty = uncrtn;
 	opinionSegment = opnSeg;
@@ -57,6 +58,6 @@ void Object::getOpns(float* opinion, float* uncertainty, float opinionSegment[])
 void Object::printOpns(void) {
 	cout << "Opinion: " << opn 
 		 << "\tUncertainty: " << uncrtn 
-		 << "\tOpinion Segment: " << opnSeg[0] << " " << opnSeg[1]
+		 << "\tOpinion Segment: " << opnSeg[0] << ", " << opnSeg[1]
 		 << endl;
 }
