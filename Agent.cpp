@@ -92,7 +92,7 @@ float Agent::formOpn(Bill bill) {
 }
 
 /*
-	Parameters: Interacting Agent
+	Parameters: Address of interacting Agent
 	Returns: 1 if opinions changed, 0 if they did not influence each other
 	Interact with another agent. If their opinion segments overlap, they will 
 	influence one another towards a more middle ground

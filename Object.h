@@ -5,11 +5,15 @@
 
 	Header file for Object class
 
-	The Object class is the class from which every other object/agent in the model is derived.  An Object has three values: an opinion, an uncertainty value, and an opinion segment. Only the opinion and uncertainty can be set, and from those two values, the opinion segment is calculated.
+	The Object class is the class from which every other object/agent in the 
+	model is derived.  An Object has three values: an opinion, an uncertainty 
+	value, and an opinion segment. Only the opinion and uncertainty can be set, 
+	and from those two values, the opinion segment is calculated.
 
 	Opinion can be a value from between -1 and 1
 	Uncertainty is a value between 0 and 1
-	Opinion Segment is calculated as ranging from the opinion minus uncertainty to opinion plus uncertainty
+	Opinion Segment is calculated as ranging from the opinion minus uncertainty 
+	to opinion plus uncertainty
 
 	USAGE:
 	
