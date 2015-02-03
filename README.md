@@ -1,5 +1,3 @@
-Vermont-State-Legislature-Model
-===============================
 # The Role and Flow of Influence in the Vermont State Legislature
 
 ## About
