@@ -63,4 +63,12 @@ class Agent: public Object {
 			Form an opinion on a given bill
 		*/
 		float formOpn(Bill bill);
+
+		/*
+			Parameters: Interacting Agent
+			Returns: 1 if opinions changed, 0 if they did not influence each other
+			Interact with another agent. If their opinion segments overlap, they will 
+			influence one another towards a more middle ground
+		*/
+		int interact(Agent *member);
 };

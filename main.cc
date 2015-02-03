@@ -17,8 +17,9 @@ int main(void) {
 	mmbrs[4].setMmbr(0, 0.5, 'D');
 
 	bill.setBill(0.2);
-	
-	int i;
-	for (i=0;i<MEMBERS;i++) 
-		cout << mmbrs[i].formOpn(bill) <<endl;
+
+	mmbrs[0].interact(&mmbrs[1]);
+
+	mmbrs[0].printMmbr();
+	mmbrs[1].printMmbr();
 }

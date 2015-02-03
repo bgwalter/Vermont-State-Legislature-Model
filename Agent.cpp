@@ -79,17 +79,48 @@ float Agent::formOpn(Bill bill) {
 		opinion segment, and thus feels negatively about the bill.
 	*/
 
-
 	// get position of bill
 	float billOpn;
 	bill.getBill(&billOpn);
 
 	// if the bill is to the left of the agent's opinion
-	if (billOpn < opn) 
-		return (1 + (billOpn - opn) / uncrtn);
+	if (billOpn < opn) return (1 + (billOpn - opn) / uncrtn);
 	// if the bill is to the right of hte agent's opinion
-	if (billOpn > opn)
-		return (1 + (opn - billOpn) / uncrtn);
-	// if the bill is to the 
+	if (billOpn > opn) return (1 + (opn - billOpn) / uncrtn);
+	// if the bill's position is the same as the agent's
 	else return 1;
+}
+
+/*
+	Parameters: Interacting Agent
+	Returns: 1 if opinions changed, 0 if they did not influence each other
+	Interact with another agent. If their opinion segments overlap, they will 
+	influence one another towards a more middle ground
+*/
+int Agent::interact(Agent *member) {
+
+	int returnValue = 0;
+
+	// check to make sure the opinion segments of the two members overlap
+	if (opnSeg[0] < member->opnSeg[1] || opnSeg[1] > member->opnSeg[0]) {
+		// agents interact and pull eachother closer to agreement
+		opn += uncrtn * (member->opn - opn);
+		member->opn += member->uncrtn * (opn - member->opn);
+
+		// interaction occured, increment returnValue to be 1
+		returnValue++;
+	}
+
+	/* 
+		TODO introduce 'hardening' of member's opinions by decreasing 
+		members' uncertainty. Refer to Meet, Discuss, and Segregate! 
+		(Weisbuch et. al., 2002), equations 3 through 6
+	*/
+
+	// update opinion segments to reflect the change in new opinion
+	setOpns(opn, uncrtn);
+	member->setOpns(member->opn, member->uncrtn);
+
+	// return either 0 or 1
+	return returnValue;
 }
