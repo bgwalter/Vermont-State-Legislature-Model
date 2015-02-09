@@ -1,7 +1,8 @@
 #include <iostream>
 
 #include "Object.h"
-#include "Agent.h"
+#include "Agent.h"		// Bill.h included through Agent.h
+#include "Outside.h"
 
 #define MEMBERS 5
 
