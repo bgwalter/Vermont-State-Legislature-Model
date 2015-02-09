@@ -26,7 +26,7 @@
 
 #include "Bill.h"
 #include "Outside.h"
-	
+
 class Agent: public Object {
 
 	protected:
@@ -72,4 +72,11 @@ class Agent: public Object {
 			influence one another towards a more middle ground
 		*/
 		int interact(Agent *member);
+
+		/*
+			Parameters: Witness talking to the committee
+			Returns: 1 if opinion changed, 0 if witness did not influence agent
+			Talk to a witness on a certain issue
+		*/
+		int talkToWitness(Outside witness);
 };

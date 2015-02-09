@@ -65,10 +65,9 @@ void Agent::printMmbr(void) {
 */
 float Agent::formOpn(Bill bill) {
 	/*
-		The functions to determine how an agent feels about a bill are simple
-		linear functions (one with a positive slope, the other with a negative 
-		slope). An output of 1 indicates that the position of the bill is the
-		same as the agent's opinion.
+		The functions to determine how an agent feels about a bill is a simple
+		absolute value function. An output of 1 indicates that the position of 
+		the bill is the same as the agent's opinion.
 		
 		Any value greater than 0 indicates the the agent is favorable of the 
 		bill. 
@@ -121,10 +120,38 @@ int Agent::interact(Agent *member) {
 	return returnValue;
 }
 
-
+/*
+	Parameters: Witness talking to the committee
+	Returns: 1 if opinion changed, 0 if witness did not influence agent
+	Talk to a witness on a certain issue
+*/
 int Agent::talkToWitness(Outside witness) {
+
+	// get values from witness
+	float witnessOpn, witnessOpnSeg[2];
+	witness.getWitness(&witnessOpn, witnessOpnSeg);
 
 	int returnValue = 0;
 
+	// check to make sure the opinion segments of the two members overlap
+	if (opnSeg[0] < witnessOpnSeg[1] || opnSeg[1] > witnessOpnSeg[0]) {
+		// witness pulls agents towards their opinion
+		opn += uncrtn * (witnessOpn - opn);
+
+		// interaction occured, increment returnValue to be 1
+		returnValue++;
+	}
+
+	/* 
+		TODO introduce 'hardening' of member's opinions by decreasing 
+		members' uncertainty. Refer to Meet, Discuss, and Segregate! 
+		(Weisbuch et. al., 2002), equations 3 through 6
+	*/
+
+	// update agent's opinion segment to reflect the change in new opinion
+	setOpns(opn, uncrtn);
+
+	// return either 0 or 1
+	return returnValue;
 
 }

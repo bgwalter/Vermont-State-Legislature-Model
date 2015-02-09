@@ -10,20 +10,16 @@ using namespace std;
 int main(void) {
 	Bill bill;
 	Outside witness;
-	Agent mmbrs[MEMBERS];
-	mmbrs[0].setMmbr(0.2, 0.3, 'R');
-	mmbrs[1].setMmbr(0.3, 0.25, 'R');
-	mmbrs[2].setMmbr(-0.5, 0.3, 'D');
-	mmbrs[3].setMmbr(-0.1, 0.1, 'D');
-	mmbrs[4].setMmbr(0, 0.5, 'D');
+	Agent committee[MEMBERS];
+	committee[0].setMmbr(0.2, 0.3, 'R');
+	committee[1].setMmbr(0.3, 0.25, 'R');
+	committee[2].setMmbr(-0.5, 0.3, 'D');
+	committee[3].setMmbr(-0.1, 0.1, 'D');
+	committee[4].setMmbr(0, 0.5, 'D');
 
 	bill.setBill(0.2);
 
-	mmbrs[0].interact(&mmbrs[1]);
-
-	mmbrs[0].printMmbr();
-	mmbrs[1].printMmbr();
-
+	committee[0].interact(&committee[1]);
 
 	witness.setWitness(-0.15);
 	witness.printWitness();
