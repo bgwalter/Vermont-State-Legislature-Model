@@ -25,7 +25,8 @@
 */
 
 #include "Bill.h"
-
+#include "Outside.h"
+	
 class Agent: public Object {
 
 	protected:

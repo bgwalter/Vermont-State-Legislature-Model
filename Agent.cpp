@@ -7,6 +7,7 @@
 */
 
 #include <iostream>
+#include <cmath>
 
 #include "Object.h"
 #include "Agent.h"
@@ -83,12 +84,7 @@ float Agent::formOpn(Bill bill) {
 	float billOpn;
 	bill.getBill(&billOpn);
 
-	// if the bill is to the left of the agent's opinion
-	if (billOpn < opn) return (1 + (billOpn - opn) / uncrtn);
-	// if the bill is to the right of hte agent's opinion
-	if (billOpn > opn) return (1 + (opn - billOpn) / uncrtn);
-	// if the bill's position is the same as the agent's
-	else return 1;
+	return (1 - abs(billOpn - opn) / uncrtn);
 }
 
 /*
@@ -124,3 +120,12 @@ int Agent::interact(Agent *member) {
 	// return either 0 or 1
 	return returnValue;
 }
+
+/*
+int Agent::talkToWitness(Outside witness) {
+
+	int returnValue = 0;
+
+
+}
+*/

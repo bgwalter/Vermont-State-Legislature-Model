@@ -14,18 +14,19 @@ class Outside: public Object {
 	
 		/*
 			Parameters: opinion of new witness
-			Returns: None
+			Returns: 1 if success, 0 if failure
 			Creates a new witness
 		*/
-		void setWitness(float opinion);
+		int setWitness(float opinion);
 
 		/*
-			Parameters: address of value to hold witness' opinion
-				Output: witness' opinion
+			Parameters: address of value to hold witness' opinion and opinion
+				segment to hold witness' value for each
+				Output: witness' opinion and opinion segment
 			Returns: None
 			Get information of a witness using output paramters
 		*/
-		void getWitness(float* opinion);
+		void getWitness(float* opinion, float opinionSegment[]);
 
 		/*
 			Parameters: None

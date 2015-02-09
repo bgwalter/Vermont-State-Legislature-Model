@@ -1,8 +1,7 @@
 #include <iostream>
 
 #include "Object.h"
-#include "Agent.h"		// Bill.h included through Agent.h
-#include "Outside.h"
+#include "Agent.h"	// includes Bill.h and Outside.h
 
 #define MEMBERS 5
 
@@ -10,6 +9,7 @@ using namespace std;
 
 int main(void) {
 	Bill bill;
+	Outside witness;
 	Agent mmbrs[MEMBERS];
 	mmbrs[0].setMmbr(0.2, 0.3, 'R');
 	mmbrs[1].setMmbr(0.3, 0.25, 'R');
@@ -23,4 +23,8 @@ int main(void) {
 
 	mmbrs[0].printMmbr();
 	mmbrs[1].printMmbr();
+
+
+	witness.setWitness(-0.15);
+	witness.printWitness();
 }

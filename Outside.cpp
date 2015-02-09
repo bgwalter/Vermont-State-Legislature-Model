@@ -13,21 +13,24 @@ using namespace std;
 
 /*
 	Parameters: opinion of new witness
-	Returns: None
+	Returns: 1 if success, 0 if failure
 	Creates a new witness
 */
-void Outside::setWitness(float opinion) {
-
+int Outside::setWitness(float opinion) {
+	setOpns(opinion, 1);
+	return 1;
 }
 
 /*
-	Parameters: address of value to hold witness' opinion
-		Output: witness' opinion
+	Parameters: address of opinion and opinion segment to hold witness' value 
+		for each
+		Output: witness' opinion and opinion segment
 	Returns: None
 	Get information of a witness using output paramters
 */
-void getWitness(float* opinion) {
-
+void Outside::getWitness(float* opinion, float opinionSegment[]) {
+	float uncertainty;
+	getOpns(opinion, &uncertainty, opinionSegment); // fnctn from Object class
 }
 
 /*
@@ -35,6 +38,6 @@ void getWitness(float* opinion) {
 	Returns: None
 	Prints the witness' values
 */
-void printWitness(void) {
-	
+void Outside::printWitness(void) {
+	printOpns();		// function from Object class
 }
