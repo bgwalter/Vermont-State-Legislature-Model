@@ -21,7 +21,7 @@ using namespace std;
 int Bill::setBill(float opinion) {
 	// call function from Object class
 	setOpns(opinion, 1);
-	return 0;	
+	return 1;	
 }
 
 /*
