@@ -121,11 +121,10 @@ int Agent::interact(Agent *member) {
 	return returnValue;
 }
 
-/*
+
 int Agent::talkToWitness(Outside witness) {
 
 	int returnValue = 0;
 
 
 }
-*/
