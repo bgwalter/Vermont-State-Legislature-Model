@@ -7,9 +7,7 @@
 
 */
 
-#define NUMMEMBERS 10
-
-class Bill : public Object {
+class Bill: public Object {
 	protected:
 //		int influenceHistory[NUMMEMBERS][2];
 

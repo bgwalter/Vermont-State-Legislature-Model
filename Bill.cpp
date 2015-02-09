@@ -1,9 +1,9 @@
 /*
-	Object.cpp
+	Bill.cpp
 	2015 January 30
 	Brendon Walter (bwalter@bennington.edu)
 
-	Methods for Bill class
+	Methods for Object class
 */
 
 #include <stdlib.h>
