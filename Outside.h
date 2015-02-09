@@ -3,36 +3,34 @@
 	2015 Feb 8
 	Brendon Walter (bwalter@bennington.edu)
 
-	Header file for outside influences class
-
+	Header file for outside influences (witnesses, media, constiuency) class
 */
 
-class Outside  public Object {
+class Outside: public Object {
 	protected:
-//		int influenceHistory[NUMMEMBERS][2];
+
 
 	public:
 	
 		/*
-			Parameters: opinion
-			Returns: 1 if success, 0 if invalid input
-			Sets the initial values for an agent
-		*/
-		int setBill(float opinion);
-		
-		/*
-			Parameters: Address of values to hold each attribute of the agent
-				Output: Value of each attribute of the agent
+			Parameters: opinion of new witness
 			Returns: None
-			Returns agent's value as output parameters
+			Creates a new witness
 		*/
-		void getBill(float* opinion);
-		
-	
+		void setWitness(float opinion);
+
+		/*
+			Parameters: address of value to hold witness' opinion
+				Output: witness' opinion
+			Returns: None
+			Get information of a witness using output paramters
+		*/
+		void getWitness(float* opinion);
+
 		/*
 			Parameters: None
 			Returns: None
-			Prints out position of bill
+			Prints the witness' values
 		*/
-		void printBill(void);
+		void printWitness(void);
 };
